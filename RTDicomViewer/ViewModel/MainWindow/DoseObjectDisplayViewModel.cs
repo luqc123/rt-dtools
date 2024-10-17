@@ -19,6 +19,7 @@ using System.Windows;
 using RTDicomViewer.ViewModel.Dialogs;
 using RTDicomViewer.View.Dialogs;
 using RT.MonteCarlo.Phantom;
+using System.IO;
 
 namespace RTDicomViewer.ViewModel.MainWindow
 {
@@ -93,7 +94,7 @@ namespace RTDicomViewer.ViewModel.MainWindow
 
             var options = new EgsPhantomCreatorOptions();
             options.Grid = dose.Grid;
-            options.OutputFileName = @"C:\Users\thisu\Desktop\out.txt";
+            options.OutputFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.txt");
             options.XRange = options.Grid.XRange;
             options.YRange = options.Grid.YRange;
             options.ZRange = options.Grid.ZRange;
